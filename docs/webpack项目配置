@@ -1,0 +1,14 @@
+# cnpm 官网地址： npm.taobao.org
+
+# npm init 构建项目
+
+# cnpm install webpack webpack-cli --save-dev
+/package.js 
+	|______script "dev": "webpack --config ./webpack.config.dev.js --mode development"
+
+# cnpm install webpack-dev-server html-webpack-plugin --save-dev
+/package.js
+	|________ script "dev": "webpack --config ./webpack.config.dev.js --mode development"
+	 
+# cnpm install babel-core babel-loader babel-polyfill babel-preset-es2015 babel-preset-latest --save-dev
+	
