@@ -1,4 +1,3 @@
 {
-	"presets": [["presetName", {option: "es2015"}], ["presetName", {option: "latest"}]],
-	"plugin": []
+	"presets": ["es2015"],
 }

@@ -10,8 +10,8 @@ module.exports = {
 	},
 	module: {
 		rules: [{
-			test: /\.js?$/,
-			exclude: /(node_modules)/, //略过
+			test: /\.js$/,
+			exclude: /node_modules/, //略过
 			// loader: 'babel-loader', // 对检测到的js文件进行babel处理
 			loader: "babel-loader", // 应该应用的 loader，它相对上下文解析
 		}]

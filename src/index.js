@@ -1,15 +1,31 @@
-// alert(200)
-
-class Person {
-	constructor(name) {
-		this.name = name
+class JQuery {
+	constructor(selector) {
+	    let slice = Array.prototype.slice;
+		let dom = slice.call(document.querySelectorAll(selector));
+		let len = dom.length;
+		for(let i =0 ; i < len; i++) {
+			this[i] = dom[i];
+		}
+		this.length = len;
+		this.selector = selector || ''
 	}
 	
-	getName() {
-		return this.name
+	append(node) {
+		
+	}
+	addClass(name) {
+		
+	}
+	html(data) {
+		
 	}
 }
 
-let p = new Person('JaveScript');
+window.$ = function(selector) {
+	// 工厂模式
+	return new JQuery(selector);
+}
 
-alert(p.getName());
+var $p = $('p');
+console.log($p);
+console.log($p.addClass)
