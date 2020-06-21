@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue computed 适配器模式</title>
+	</head>
+	<body>
+		<div id="app">
+			<p>顺序：{{message}}</p>
+			<p>逆序：{{reverseMessage}}</p>
+		</div>
+		
+		<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.5.16/vue.js"></script>
+		<script type="text/javascript">
+			// https://www.bootcdn.cn/vue/2.5.16/
+			var vm = new Vue({
+				el: '#app',
+				data() {
+					return {
+						message: 'hello'
+					}
+				},
+				computed: {
+					reverseMessage() {
+						return this.message.split('').reverse().join('')
+					}
+				}
+			})
+			
+			// 启动步骤: 
+			// 		1.cnpm install http-server -g
+			//		2.在当前目录下http-server -p 8881
+			//		3.浏览器localhost:8881/test.html
+						
+		</script>
+	</body>
+</html>
