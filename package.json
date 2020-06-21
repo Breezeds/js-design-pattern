@@ -4,7 +4,7 @@
   "description": "js-design-pattern",
   "main": "index.js",
   "scripts": {
-		"start": "npm run dev",
+    "start": "npm run dev",
     "dev": "webpack-dev-server --config ./webpack.config.dev.js --mode development",
     "build": "webpack --config ./webpack.config.dev.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,5 +29,8 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "core-decorators": "^0.20.0"
   }
 }

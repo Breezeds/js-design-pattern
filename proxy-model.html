@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>proxy-model</title>
+	</head>
+	<body>
+		<div class="div1">
+			<a href="#">a1</a>
+			<a href="#">a2</a>
+			<a href="#">a3</a>
+			<a href="#">a4</a>
+			<a href="#">a5</a>
+		</div>
+		<div id="div2" style="width: 500px;height: 20px;background-color: blue;">div2</div>
+		
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"></script>
+		<script type="text/javascript">
+			// 启动步骤:
+			//	1.打开当前目录
+			//	2.http-server -p 8881
+			//	3.localhost:8881/proxy-model.html
+			
+			
+			// 场景1: 网页事件代理addEventListener
+			var div1 = document.querySelector('.div1');
+			div1.addEventListener('click', function(e) {
+				var target = e.target;
+				console.log('nodeName', target.nodeName)
+				if(target.nodeName == 'A') {
+					console.log('nodeName:', target.innerHTML)
+				}
+			})
+			
+			
+			// 场景2: jQuery $.proxy
+			$('#div2').click(function(e) {
+				var fn = function() {
+					console.log(this)
+					$(this).css({'background-color': 'yellow'})
+				}
+				fn = $.proxy(fn, this)
+				setTimeout(fn, 1000)
+			})
+			
+		</script>
+	</body>
+</html>
