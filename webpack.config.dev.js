@@ -27,6 +27,11 @@ module.exports = {
 		compress: true, // 压缩
 		port: 9000,
 		hot: true, //热更新
+		proxy: {
+			"/api/*": {
+				target: "http://localhost:8880"
+			}
+		}
 	}
 	
 }
