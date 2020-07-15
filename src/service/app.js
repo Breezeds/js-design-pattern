@@ -10,7 +10,8 @@ export default class App {
 	
 	// 初始化购物车 
 	initShoppingCart(app) {
-		new ShoppingCart(app);
+		let shoppingCart = new ShoppingCart(app);
+		shoppingCart.init();
 	}
 	
 	// 初始化购物车列表
